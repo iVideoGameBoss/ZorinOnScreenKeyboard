@@ -1,8 +1,8 @@
-# Zorn On-Screen Keyboard
+# Zorin On-Screen Keyboard
 
 A modern, floating, resizable, and always-on-top virtual keyboard for Linux. Designed for mouse input, featuring a sleek interface with Dark/Light modes and window focus management.
 
-![Zorn On-Screen Keyboard Demo](ZornOnScreenKeyboard-Demo.png)
+![Zorin On-Screen Keyboard Demo](ZorinOnScreenKeyboard-Demo.png)
 
 ## Features
 
@@ -13,7 +13,7 @@ A modern, floating, resizable, and always-on-top virtual keyboard for Linux. Des
 -   **Compact Design:** Minimalist interface with auto-hiding controls and optimized layout.
 -   **System Integration:** Uses `xdotool` to simulate natural keystrokes.
 
-![Zorn On-Screen Keyboard Interface](ZornOnScreenKeyboard.png)
+![Zorin On-Screen Keyboard Interface](ZorinOnScreenKeyboard.png)
 
 ## Prerequisites
 
@@ -52,13 +52,13 @@ If you haven't already, install [Miniconda](https://docs.conda.io/en/latest/mini
 Create a new Conda environment with Python 3.13.
 
 ```bash
-conda create -n zorn-keyboard python=3.13
+conda create -n zorin-keyboard python=3.13
 ```
 
 ### 3. Activate the Environment
 
 ```bash
-conda activate zorn-keyboard
+conda activate zorin-keyboard
 ```
 
 ### 4. Install Application Dependencies
@@ -79,7 +79,7 @@ sudo apt-get install python3-tk
 
 1.  **Activate the environment** (if not already active):
     ```bash
-    conda activate zorn-keyboard
+    conda activate zorin-keyboard
     ```
 
 2.  **Run the application:**

@@ -17,7 +17,7 @@ fi
 eval "$(conda shell.bash hook)"
 
 # Activate the environment
-conda activate zorn-keyboard
+conda activate zorin-keyboard
 
 # Run the application
 python floating_keyboard.py
