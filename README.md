@@ -1,6 +1,6 @@
 # Zorn On-Screen Keyboard
 
-A modern, floating, resizable, and always-on-top virtual keyboard for Linux. Designed for touchscreens and mouse input, featuring a sleek interface with Dark/Light modes and window focus management.
+A modern, floating, resizable, and always-on-top virtual keyboard for Linux. Designed for mouse input, featuring a sleek interface with Dark/Light modes and window focus management.
 
 ![Zorn On-Screen Keyboard Demo](ZornOnScreenKeyboard-Demo.png)
 
