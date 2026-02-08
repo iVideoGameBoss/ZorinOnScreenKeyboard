@@ -1,0 +1,5 @@
+# System dependencies for Linux (Debian/Ubuntu):
+# sudo apt-get install xdotool python3-tk
+
+# No external pip packages required.
+# Standard library used: tkinter, subprocess
