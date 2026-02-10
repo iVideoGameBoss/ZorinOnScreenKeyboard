@@ -69,7 +69,7 @@ class FloatingKeyboard:
         self.title_bar.pack_propagate(False)
         
         # Title label
-        title_label = tk.Label(self.title_bar, text="On-Screen Keyboard", bg='#404040', fg='white', font=('Arial', 10))
+        title_label = tk.Label(self.title_bar, text="On-Screen Keyboard", bg='#404040', fg='white', font=('Arial', 3))
         title_label.pack(side='left', padx=10)
         
         # Bind double-click to reset size
@@ -80,7 +80,7 @@ class FloatingKeyboard:
         # Auto width to fit text
         button_padding = 2
         close_btn = tk.Button(self.title_bar, text='X', bg='#404040', fg='white', 
-                              bd=0, font=('Arial', 10), command=self.root.quit,
+                              bd=0, font=('Arial', 3), command=self.root.quit,
                               activebackground='#cc0000', activeforeground='white',
                               padx=button_padding)
         # Increased right padding to avoid overlap with resize grip
@@ -89,7 +89,7 @@ class FloatingKeyboard:
         # Minimize button - Pack SECOND to be to the left of Close
         # Auto width to fit text
         self.min_btn = tk.Button(self.title_bar, text='-', bg='#404040', fg='white', 
-                              bd=0, font=('Arial', 10), command=self.toggle_minimize,
+                              bd=0, font=('Arial', 3), command=self.toggle_minimize,
                               activebackground='#606060', activeforeground='white',
                               padx=2)
         self.min_btn.pack(side='right', padx=2)
@@ -97,19 +97,19 @@ class FloatingKeyboard:
         # Theme toggle button - Pack THIRD (right to left)
         # Auto width to fit text
         self.theme_btn = tk.Button(self.title_bar, text='☀/🌙', bg='#404040', fg='white',
-                                 bd=0, font=('Arial', 10), command=self.toggle_theme,
+                                 bd=0, font=('Arial', 3), command=self.toggle_theme,
                                  activebackground='#606060', activeforeground='white',
                                  padx=2)
         self.theme_btn.pack(side='right', padx=2)
         
         # Select window button
         select_btn = tk.Button(self.title_bar, text='Select Window', bg='#505050', fg='white',
-                               bd=0, font=('Arial', 10), command=self.select_target_window,
+                               bd=0, font=('Arial', 3), command=self.select_target_window,
                                activebackground='#606060')
         select_btn.pack(side='right', padx=10)
         
         # Status label
-        self.status_label = tk.Label(self.title_bar, text='No target', bg='#404040', fg='#aaaaaa', font=('Arial', 10))
+        self.status_label = tk.Label(self.title_bar, text='No target', bg='#404040', fg='#aaaaaa', font=('Arial', 3))
         self.status_label.pack(side='right', padx=5)
         
         # Bind drag events to title bar
@@ -230,7 +230,7 @@ class FloatingKeyboard:
                 # Simple check: just update it, it's cheap enough
                 btn.configure(font=('Arial', new_size))
         
-    def create_key(self, parent, text, keycode, row, col, colspan=1, font_size=12):
+    def create_key(self, parent, text, keycode, row, col, colspan=1, font_size=3):
         """Create a single key button"""
         btn = tk.Button(
             parent,
@@ -265,10 +265,10 @@ class FloatingKeyboard:
         for text, keycode in keys_row0:
             self.create_key(self.main_frame, text, keycode, 0, col, colspan=2)
             col += 2
-        self.create_key(self.main_frame, 'Backspace', 'BackSpace', 0, col, colspan=4, font_size=10)
+        self.create_key(self.main_frame, 'Backspace', 'BackSpace', 0, col, colspan=4, font_size=2)
         
         # Row 1: Tab + QWERTY
-        self.create_key(self.main_frame, 'Tab', 'Tab', 1, 0, colspan=3, font_size=10)
+        self.create_key(self.main_frame, 'Tab', 'Tab', 1, 0, colspan=3, font_size=2)
         keys_row1 = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
         col = 3
         for key in keys_row1:
@@ -281,7 +281,7 @@ class FloatingKeyboard:
         self.create_key(self.main_frame, '\\', 'backslash', 1, col, colspan=3)
         
         # Row 2: Caps + ASDF
-        self.create_key(self.main_frame, 'Caps', 'Caps_Lock', 2, 0, colspan=4, font_size=10)
+        self.create_key(self.main_frame, 'Caps', 'Caps_Lock', 2, 0, colspan=4, font_size=2)
         keys_row2 = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
         col = 4
         for key in keys_row2:
@@ -291,10 +291,10 @@ class FloatingKeyboard:
         col += 2
         self.create_key(self.main_frame, "'", 'apostrophe', 2, col, colspan=2)
         col += 2
-        self.create_key(self.main_frame, 'Enter', 'Return', 2, col, colspan=4, font_size=10)
+        self.create_key(self.main_frame, 'Enter', 'Return', 2, col, colspan=4, font_size=2)
         
         # Row 3: Shift + ZXCV
-        self.create_key(self.main_frame, 'Shift', 'Shift_L', 3, 0, colspan=5, font_size=10)
+        self.create_key(self.main_frame, 'Shift', 'Shift_L', 3, 0, colspan=5, font_size=2)
         keys_row3 = ['z', 'x', 'c', 'v', 'b', 'n', 'm']
         col = 5
         for key in keys_row3:
@@ -306,16 +306,16 @@ class FloatingKeyboard:
         col += 2
         self.create_key(self.main_frame, '/', 'slash', 3, col, colspan=2)
         col += 2
-        self.create_key(self.main_frame, 'Shift', 'Shift_R', 3, col, colspan=5, font_size=10)
+        self.create_key(self.main_frame, 'Shift', 'Shift_R', 3, col, colspan=5, font_size=2)
         
         # Row 4: Bottom row
-        self.create_key(self.main_frame, 'Ctrl', 'Control_L', 4, 0, colspan=3, font_size=10)
-        self.create_key(self.main_frame, 'Win', 'Super_L', 4, 3, colspan=3, font_size=10)
-        self.create_key(self.main_frame, 'Alt', 'Alt_L', 4, 6, colspan=3, font_size=10)
-        self.create_key(self.main_frame, 'Space', 'space', 4, 9, colspan=12, font_size=10)
-        self.create_key(self.main_frame, 'Alt', 'Alt_R', 4, 21, colspan=3, font_size=10)
-        self.create_key(self.main_frame, 'Win', 'Super_R', 4, 24, colspan=3, font_size=10)
-        self.create_key(self.main_frame, 'Ctrl', 'Control_R', 4, 27, colspan=3, font_size=10)
+        self.create_key(self.main_frame, 'Ctrl', 'Control_L', 4, 0, colspan=3, font_size=2)
+        self.create_key(self.main_frame, 'Win', 'Super_L', 4, 3, colspan=3, font_size=2)
+        self.create_key(self.main_frame, 'Alt', 'Alt_L', 4, 6, colspan=3, font_size=2)
+        self.create_key(self.main_frame, 'Space', 'space', 4, 9, colspan=12, font_size=2)
+        self.create_key(self.main_frame, 'Alt', 'Alt_R', 4, 21, colspan=3, font_size=2)
+        self.create_key(self.main_frame, 'Win', 'Super_R', 4, 24, colspan=3, font_size=2)
+        self.create_key(self.main_frame, 'Ctrl', 'Control_R', 4, 27, colspan=3, font_size=2)
     
     def select_target_window(self):
         """Let user click to select target window"""
